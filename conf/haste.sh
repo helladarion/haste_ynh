@@ -15,7 +15,7 @@ check_dependencies() {
 }
 
 paste_data() {
-  json=$(curl -X POST -s -d "$1" "${PASTE_URL}/documents")
+  json=$(curl -X POST -s -d "$1" "${PASTE_URL}documents")
   [[ -z "$json" ]] && _die "Unable to post the data to the server."
 
   key=$(echo "$json" \

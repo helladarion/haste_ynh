@@ -91,7 +91,7 @@ ynh_system_user_create $app
 # INSTALL NODEJS
 #=================================================
 
-ynh_install_nodejs 4
+ynh_install_nodejs --nodejs_version=8
 
 #=================================================
 # ADD SYSTEMD SERVICE
@@ -107,6 +107,7 @@ ynh_add_systemd_config
 # INSTALL HASTEBIN
 #=================================================
 
+ynh_package_install nodejs
 ynh_use_nodejs
 
 (cd "$final_path"
